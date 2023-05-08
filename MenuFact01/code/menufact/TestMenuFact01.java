@@ -1,6 +1,8 @@
 package menufact;
 
 import menufact.facture.Facture;
+import menufact.facture.FactureControleur;
+import menufact.facture.FactureVue;
 import menufact.plats.PlatAuMenu;
 import menufact.plats.PlatChoisi;
 import menufact.plats.PlatSante;
@@ -44,7 +46,7 @@ public class TestMenuFact01 {
             System.out.println("== Plat choisi");
             PlatChoisi pch1 = new PlatChoisi(p1, 5);
             System.out.println(pch1);
-
+/*
             System.out.println("== New menufact.facture.Facture");
             Facture facture = new Facture("Ma facture");
             System.out.println(facture);
@@ -80,6 +82,45 @@ public class TestMenuFact01 {
             facture.ouvrir();
             System.out.println(facture);
             System.out.println("Etat = " + facture.getEtat());
+ */
+            System.out.println("== New menufact.facture.Facture");
+            Facture fact = new Facture("Ma facture");
+            FactureVue vue = new FactureVue();
+            FactureControleur facture = new FactureControleur(fact, vue);
+            facture.stringVue();
+
+            System.out.println("== Ajout d'un plat choisie à la facture");
+            facture.ajoutePlat(pch1);
+            facture.stringVue();
+            System.out.println(fact.sousTotal());
+
+            System.out.println("== Ajout d'un plat choisie à la facture");
+            PlatChoisi pch2 = new PlatChoisi(p2, 10);
+            facture.ajoutePlat(pch2);
+            facture.stringVue();
+            System.out.println(fact.sousTotal());
+
+            System.out.println(fact.total());
+            facture.ouvrir();
+            facture.stringVue();
+            System.out.println("Etat = " + facture.getEtat());
+
+            facture.fermer();
+            facture.stringVue();
+            System.out.println("Etat = " + facture.getEtat());
+
+            facture.ouvrir();
+            facture.stringVue();
+            System.out.println("Etat = " + facture.getEtat());
+
+            facture.payer();
+            facture.stringVue();
+            System.out.println("Etat = " + facture.getEtat());
+
+            facture.ouvrir();
+            facture.stringVue();
+            System.out.println("Etat = " + facture.getEtat());
+
         }catch (Exception fe)
         {
             System.out.println(fe.getMessage());
