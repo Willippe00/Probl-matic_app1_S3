@@ -1,7 +1,5 @@
 package menufact.facture;
 
-import java.util.Date;
-
 import menufact.Client;
 import menufact.plats.PlatChoisi;
 import menufact.facture.exceptions.FactureException;
