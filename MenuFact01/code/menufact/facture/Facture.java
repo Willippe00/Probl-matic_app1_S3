@@ -13,9 +13,11 @@ import java.util.Date;
  * @version 1.0
  */
 public class Facture {
+
+    FactureEtats FactureEtat;
     private Date date;
     private String description;
-    private FactureEtat etat;
+    private FactureEtats etat;
     private ArrayList<PlatChoisi> platchoisi = new ArrayList<PlatChoisi>();
     private int courant;
     private Client client;
