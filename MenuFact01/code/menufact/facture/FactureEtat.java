@@ -1,23 +1,29 @@
 package menufact.facture;
 
- public abstract class FactureEtats {
+ public abstract class FactureEtat {
      Facture facture;
 
 
-     FactureEtats(Facture facture) {
+     FactureEtat(Facture facture) {
          //this.facture = facture;
-         new OUVERTEtState(facture);
+
      }
 
-     FactureEtats()
+     FactureEtat()
      {
 
      }
 
-     public abstract FactureEtats OUVERTE;
-     public abstract FactureEtats FERMEE;
+     public abstract FactureEtat OUVERTE();
+     public abstract FactureEtat FERMEE();
 
-     public abstract FactureEtats PAYEE;
+     public abstract FactureEtat PAYEE();
+
+     public abstract boolean  EstOUVERTE();
+
+     public abstract boolean  EstFERMEE();
+
+     public abstract boolean  EstPAYEE();
 
      enum Etat{
          UVERTE, FERMEE, PAYEE
@@ -25,63 +31,5 @@ package menufact.facture;
      }
 }
 
-public class OUVERTEtState extends FactureEtat
-{
-    OUVERTEtState(Facture facture) {super(facture);}
 
-    @Override
-    public FactureEtat OUVERTE()
-    {
-        return this;
-    }
-
-    @Override
-    public FactureEtat FERMEE() {
-        return (new FERMEEState(facture));
-    }
-
-    @Override
-    public FactureEtat PAYEE() {
-        return null;
-    }
-
-
-}
-
-
-public class FERMEEState extends FactureEtat
-{
-    @Override
-    public FactureEtat OUVERTE() {
-        return null;
-    }
-
-    @Override
-    public FactureEtat FERMEE() {
-        return null;
-    }
-
-    @Override
-    public FactureEtat PAYEE() {
-        return null;
-    }
-}
-
-public class PAYEEState extends FactureEtat
-{
-    @Override
-    public FactureEtat OUVERTE() {
-        return null;
-    }
-
-    @Override
-    public FactureEtat FERMEE() {
-        return null;
-    }
-
-    @Override
-    public FactureEtat PAYEE() {
-        return null;
-    }
-}
- //OUVERTE, FERMEE, PAYEE
+//OUVERTE, FERMEE, PAYEE

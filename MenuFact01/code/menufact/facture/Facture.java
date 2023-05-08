@@ -14,10 +14,10 @@ import java.util.Date;
  */
 public class Facture {
 
-    FactureEtats FactureEtat;
+
     private Date date;
     private String description;
-    private FactureEtats etat;
+    private FactureEtat etat;// new OUVERTEtState(this);;
     private ArrayList<PlatChoisi> platchoisi = new ArrayList<PlatChoisi>();
     private int courant;
     private Client client;
@@ -77,14 +77,14 @@ public class Facture {
      */
     public void payer()
     {
-       etat = FactureEtat.PAYEE;
+       etat = etat.PAYEE();
     }
     /**
      * Permet de chager l'état de la facture à FERMEE
      */
     public void fermer()
     {
-       etat = FactureEtat.FERMEE;
+       etat = etat.FERMEE();
     }
 
     /**
@@ -93,10 +93,10 @@ public class Facture {
      */
     public void ouvrir() throws FactureException
     {
-        if (etat == FactureEtat.PAYEE)
+        if (etat == etat.PAYEE())
             throw new FactureException("La facture ne peut pas être reouverte.");
         else
-            etat = FactureEtat.OUVERTE;
+            etat = etat.OUVERTE();
     }
 
     /**
@@ -114,7 +114,7 @@ public class Facture {
      */
     public Facture(String description) {
         date = new Date();
-        etat = FactureEtat.OUVERTE;
+        etat = new OUVERTEtState(this);//FactureEtat->OUVERTE;
         courant = -1;
         this.description = description;
     }
@@ -126,7 +126,7 @@ public class Facture {
      */
     public void ajoutePlat(PlatChoisi p) throws FactureException
     {
-        if (etat == FactureEtat.OUVERTE)
+        if (etat == etat.OUVERTE())
             platchoisi.add(p);
         else
             throw new FactureException("On peut ajouter un plat seulement sur une facture OUVERTE.");
