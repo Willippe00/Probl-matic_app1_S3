@@ -1,5 +1,6 @@
 package tests;
 
+import inventaire.Inventaire;
 import menufact.Chef.Chef;
 import menufact.Chef.Commander;
 import menufact.plats.PlatAuMenu;
@@ -37,7 +38,8 @@ class ChefTest {
     void Test_notification() throws ServiceException {
 
         PlatAuMenu PlatSante = new PlatSante();
-        Commander Gaston2 = new Commander(new PlatChoisi(PlatSante, 6));
+        Inventaire Inventaire = new Inventaire();
+        Commander Gaston2 = new Commander(new PlatChoisi(PlatSante, 6), Inventaire);
 
         assert (Gaston2.middleware!=null);
 
