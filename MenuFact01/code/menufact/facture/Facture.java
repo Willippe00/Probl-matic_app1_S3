@@ -13,11 +13,17 @@ import java.util.Date;
  * @version 1.0
  */
 public class Facture {
+<<<<<<< HEAD
 
 
     private Date date;
     private String description;
     private FactureEtat etat;// new OUVERTEtState(this);;
+=======
+    private Date date;
+    private String description;
+    private FactureEtat etat;
+>>>>>>> parent of f58e4a1... Auto stash before merge of "main" and "origin/main"
     private ArrayList<PlatChoisi> platchoisi = new ArrayList<PlatChoisi>();
     private int courant;
     private Client client;
