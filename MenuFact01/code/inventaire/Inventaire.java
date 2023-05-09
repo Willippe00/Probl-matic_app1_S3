@@ -6,13 +6,26 @@ import ingredients.exceptions.IngredientException;
 
 import java.util.ArrayList;
 
+/**
+ * Un inventaire pour les ingrédients
+ * @author Vincent Caron-Thibault, William Roberge
+ * @version 1.0
+ */
+
 public class Inventaire {
     private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
 
+    /**
+     * Permet d'ajouter un ingredient a l'inventaire
+     * en specifiant l'ingredient et sa quantite
+     */
     public void ajouter (Ingredient ingredient, int quanite) {
         lesIngredients.add(new IngredientInventaire(ingredient, quanite));
     }
 
+    /**
+     * @return la quantite presente en inventaire d'un ingredient specifie
+     */
     public int getQuantite(Ingredient ingredient){
         for(IngredientInventaire inventaire : lesIngredients){
             if(inventaire.getIngredient().equals(ingredient)){
@@ -22,6 +35,9 @@ public class Inventaire {
         return 0;
     }
 
+    /**
+     * Permet de modifier la quantite d'un ingredient dans l'inventaire
+     */
     public void ajusterQuantite(Ingredient ingredient, int quantite) throws IngredientException{
         for(IngredientInventaire inventaire : lesIngredients){
             if (inventaire.getIngredient().equals(ingredient)){
