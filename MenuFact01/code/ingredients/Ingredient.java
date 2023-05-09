@@ -4,6 +4,7 @@ public class Ingredient {
     private String nom;
     private String description;
     private TypeIngredient typeIngredient;
+    private TypeConsistance typeConsistance;
 
     public String getNom() {
         return nom;
@@ -28,4 +29,7 @@ public class Ingredient {
     public void setTypeIngredient(TypeIngredient typeIngredient) {
         this.typeIngredient = typeIngredient;
     }
+
+    public TypeConsistance getTypeConsistance() { return typeConsistance;}
+    public void setTypeConsistance(TypeConsistance typeConsistance) { this.typeConsistance = typeConsistance;}
 }
