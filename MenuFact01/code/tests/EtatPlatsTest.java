@@ -8,10 +8,12 @@ import org.junit.jupiter.api.Test;
 public class EtatPlatsTest {
 
     PlatChoisi PlatTest = new PlatChoisi(new PlatAuMenu(), 1);
-    Inventaire inventaire = new Inventaire();
+    Inventaire inventaire= null;
+
     Etat_des_plats middleware;
     @Test
     void testCommndeNormale() throws ServiceException {
+        inventaire.getInstance();
 
 
         middleware = Etat_des_plats.link(

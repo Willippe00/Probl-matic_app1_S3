@@ -1,10 +1,13 @@
 package menufact.plats;
 
 import ingredients.IngredientInventaire;
+import inventaire.Inventaire;
 
 import java.util.ArrayList;
 
 public class PlatAuMenu {
+
+    Inventaire inventaire;
     private int code;
     private String description;
     private double prix;
@@ -16,9 +19,11 @@ public class PlatAuMenu {
         this.description = description;
         this.prix = prix;
         this.lesIngredients = lesIngredients;
+        inventaire.getInstance();
     }
 
     public PlatAuMenu() {
+
     }
 
     @Override

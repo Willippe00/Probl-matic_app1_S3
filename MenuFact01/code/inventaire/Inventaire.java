@@ -13,6 +13,20 @@ import java.util.ArrayList;
  */
 
 public class Inventaire {
+
+    public static Inventaire getInstance() {
+        if (instance == null) {
+            instance = new Inventaire();
+        }
+        return instance;
+    }
+
+    private Inventaire()
+    {
+
+    }
+
+    private static Inventaire instance;
     private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
 
     /**

@@ -11,7 +11,8 @@ public class InventaireTest {
 
     @Test
     void testGetQuantite(){
-        Inventaire inventaire = new Inventaire();
+        Inventaire inventaire= null;
+        inventaire.getInstance();
         Ingredient ingredient = new Ingredient();
 
         inventaire.ajouter(ingredient, 5);
@@ -20,7 +21,8 @@ public class InventaireTest {
 
     @Test
     void testGetIngredientAbsent() {
-        Inventaire inventaire = new Inventaire();
+        Inventaire inventaire= null;
+        inventaire.getInstance();
         Ingredient ingredient = new Ingredient();
 
         assertEquals(0, inventaire.getQuantite(ingredient));
@@ -28,7 +30,8 @@ public class InventaireTest {
 
     @Test
     void testAjusterQuantite() throws IngredientException {
-        Inventaire inventaire = new Inventaire();
+        Inventaire inventaire= null;
+        inventaire.getInstance();
         Ingredient ingredient = new Ingredient();
 
         inventaire.ajouter(ingredient, 5);
@@ -38,7 +41,8 @@ public class InventaireTest {
 
     @Test
     void testQuantiteNegative() {
-        Inventaire inventaire = new Inventaire();
+        Inventaire inventaire= null;
+        inventaire.getInstance();
         Ingredient ingredient = new Ingredient();
 
         inventaire.ajouter(ingredient, 5);
@@ -51,7 +55,8 @@ public class InventaireTest {
 
     @Test
     void testAjusterIngredientAbsent() {
-        Inventaire inventaire = new Inventaire();
+        Inventaire inventaire= null;
+        inventaire.getInstance();
         Ingredient ingredient = new Ingredient();
 
         Throwable exception = assertThrows(IngredientException.class, () -> {

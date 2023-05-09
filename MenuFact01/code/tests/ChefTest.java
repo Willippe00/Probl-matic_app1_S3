@@ -38,8 +38,9 @@ public class ChefTest {
     void Test_notification() throws ServiceException {
 
         PlatAuMenu PlatSante = new PlatSante();
-        Inventaire Inventaire = new Inventaire();
-        Commander Gaston2 = new Commander(new PlatChoisi(PlatSante, 6), Inventaire);
+        Inventaire inventaire= null;
+        inventaire.getInstance();
+        Commander Gaston2 = new Commander(new PlatChoisi(PlatSante, 6), inventaire);
 
         assert (Gaston2.middleware!=null);
 
