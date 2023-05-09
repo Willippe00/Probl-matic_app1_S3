@@ -17,7 +17,7 @@ public class PlatFactory {
 
     }
     public PlatAuMenu creerPlat(PlatType type, int code, String description, double prix, double proportion,
-                                double kcal, double chol, double gras) {
+                                double kcal, double chol, double gras, ) {
         switch(type) {
             case PLATENFANT:
                 return new PlatEnfant(code, description, prix, proportion);

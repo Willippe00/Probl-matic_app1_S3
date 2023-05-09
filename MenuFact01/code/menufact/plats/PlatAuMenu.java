@@ -1,14 +1,21 @@
 package menufact.plats;
 
+import ingredients.IngredientInventaire;
+
+import java.util.ArrayList;
+
 public class PlatAuMenu {
     private int code;
     private String description;
     private double prix;
+    private ArrayList<IngredientInventaire> lesIngredients = new ArrayList<IngredientInventaire>();
 
-    public PlatAuMenu(int code, String description, double prix) {
+    public PlatAuMenu(int code, String description, double prix,
+                      ArrayList<IngredientInventaire> lesIngredients) {
         this.code = code;
         this.description = description;
         this.prix = prix;
+        this.lesIngredients = lesIngredients;
     }
 
     public PlatAuMenu() {
@@ -45,5 +52,13 @@ public class PlatAuMenu {
 
     public void setPrix(double prix) {
         this.prix = prix;
+    }
+
+    public ArrayList<IngredientInventaire> getLesIngredients() {
+        return lesIngredients;
+    }
+
+    public void setLesIngredients(ArrayList<IngredientInventaire> lesIngredients) {
+        this.lesIngredients = lesIngredients;
     }
 }
