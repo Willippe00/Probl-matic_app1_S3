@@ -1,7 +1,6 @@
 package tests;
 
 import ingredients.Ingredient;
-import ingredients.IngredientInventaire;
 import ingredients.exceptions.IngredientException;
 import inventaire.Inventaire;
 import org.junit.jupiter.api.Test;
