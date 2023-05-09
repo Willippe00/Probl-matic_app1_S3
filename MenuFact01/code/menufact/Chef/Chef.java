@@ -1,4 +1,5 @@
 package menufact.Chef;
+import inventaire.Inventaire;
 import menufact.plats.PlatChoisi;
 import menufact.plats.exeptions.ServiceException;
 
@@ -21,8 +22,8 @@ public class Chef {
 
     }
 
-    public void notifier(PlatChoisi plat) throws ServiceException {
-        Commander notification = new Commander(plat);
+    public void notifier(PlatChoisi plat, Inventaire inventaire) throws ServiceException {
+        Commander notification = new Commander(plat, inventaire);
 
     }
 }

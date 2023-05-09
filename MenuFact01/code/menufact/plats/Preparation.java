@@ -1,14 +1,29 @@
 package menufact.plats;
 import ingredients.Ingredient;
+import ingredients.Legume;
+import ingredients.*;
 import inventaire.Inventaire;
 
 
 import ingredients.exceptions.IngredientException;
+import menufact.facture.exceptions.FactureException;
 import menufact.plats.exeptions.ServiceException;
 
-public class Preparation extends Etat_des_plats{
+import java.util.ArrayList;
 
-    public Preparation(PlatChoisi plat) throws ServiceException {
+public class Preparation extends Etat_des_plats{
+    private ArrayList<IngredientInventaire> Ingredients;
+    public Preparation(PlatChoisi plat, Inventaire inventaire) throws ServiceException {
+        Ingredients = plat.getPlat().getLesIngredients();
+
+        for(int i =0; i<Ingredients.size(); i++)
+        {
+            if(inventaire.getQuantite(Ingredients.get(i).getIngredient() )<0)
+            {
+                throw new ServiceException("impossible de préparer le repas");
+            }
+
+        }
 
     }
 
