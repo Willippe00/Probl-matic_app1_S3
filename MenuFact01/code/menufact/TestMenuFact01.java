@@ -13,25 +13,25 @@ public class TestMenuFact01 {
             //PlatAuMenu p1 = new PlatAuMenu(0, "Frites sauce", 11.50);
             PlatFactory factory = new PlatFactory();
             PlatAuMenu p1 = factory.creerPlat(PlatType.PLATAUMENU, 0, "Frites sauce", 11.50,
-                    0, 0, 0, 0);
+                    0, 0, 0, 0, null);
             System.out.println(p1);
 
             System.out.println("===menufact.plats.PlatAuMenu Constructeur 3 arguments");
             //PlatAuMenu p2 = new PlatAuMenu(1, "Frites", 10.25);
             PlatAuMenu p2 = factory.creerPlat(PlatType.PLATAUMENU, 1, "Frites", 10.25,
-                    0,0,0,0);
+                    0,0,0,0, null);
             System.out.println(p2);
 
             System.out.println("===menufact.plats.PlatSante Constructeur 5 arguments");
             //PlatSante ps1 = new PlatSante(2, "Salade", 5.25, 100, 10, 1);
             PlatAuMenu ps1 = factory.creerPlat(PlatType.PLATSANTE, 2, "Salade", 5.25,
-                    0, 100, 10, 1);
+                    0, 100, 10, 1, null);
             System.out.println(ps1);
 
             System.out.println("===menufact.plats.PlatSante Constructeur 5 arguments");
             //PlatSante ps2 = new PlatSante(3, "Salade Cesar", 8.25, 100, 10, 1);
             PlatAuMenu ps2 = factory.creerPlat(PlatType.PLATSANTE, 3, "Salade Cesar", 8.25,
-                    0, 100, 10, 1);
+                    0, 100, 10, 1, null);
             System.out.println(ps2);
 
             System.out.println("===menufact.Menu ajout avec 4 plats");

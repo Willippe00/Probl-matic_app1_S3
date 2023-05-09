@@ -1,13 +1,18 @@
 package menufact.plats;
 
+import ingredients.IngredientInventaire;
+
+import java.util.ArrayList;
+
 public class PlatEnfant extends PlatAuMenu{
     private double proportion;
 
     public PlatEnfant() {
     }
 
-    public PlatEnfant(int code, String description, double prix, double proportion) {
-        super(code, description, prix);
+    public PlatEnfant(int code, String description, double prix, double proportion,
+                      ArrayList<IngredientInventaire> lesIngredients) {
+        super(code, description, prix, lesIngredients);
         this.proportion = proportion;
     }
 

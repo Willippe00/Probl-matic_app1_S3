@@ -5,6 +5,8 @@ package menufact.plats;
  * @version 1.0
  */
 
+import ingredients.IngredientInventaire;
+
 import java.util.ArrayList;
 
 public class PlatFactory {
@@ -17,14 +19,15 @@ public class PlatFactory {
 
     }
     public PlatAuMenu creerPlat(PlatType type, int code, String description, double prix, double proportion,
-                                double kcal, double chol, double gras, ) {
+                                double kcal, double chol, double gras,
+                                ArrayList<IngredientInventaire> lesIngredients) {
         switch(type) {
             case PLATENFANT:
-                return new PlatEnfant(code, description, prix, proportion);
+                return new PlatEnfant(code, description, prix, proportion, lesIngredients);
             case PLATSANTE:
-                return new PlatSante(code, description, prix, kcal, chol, gras);
+                return new PlatSante(code, description, prix, kcal, chol, gras, lesIngredients);
             default:
-                return new PlatAuMenu(code, description, prix);
+                return new PlatAuMenu(code, description, prix, lesIngredients);
         }
     }
 
