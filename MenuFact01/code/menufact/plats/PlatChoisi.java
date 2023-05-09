@@ -1,5 +1,6 @@
 package menufact.plats;
 
+
 import menufact.plats.PlatAuMenu;
 
 public class PlatChoisi {

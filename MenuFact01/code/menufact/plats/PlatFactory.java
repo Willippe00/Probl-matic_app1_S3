@@ -5,12 +5,17 @@ package menufact.plats;
  * @version 1.0
  */
 
+import java.util.ArrayList;
+
 public class PlatFactory {
 
-    /**
-     * Creation du plat
-     * @return le plat cree
-     */
+    private ArrayList<PlatAuMenu> type_du_plat = new ArrayList<PlatAuMenu>();
+
+    public PlatFactory()
+    {
+        //type_du_plat.add(PlatSante );
+
+    }
     public PlatAuMenu creerPlat(PlatType type, int code, String description, double prix, double proportion,
                                 double kcal, double chol, double gras) {
         switch(type) {
