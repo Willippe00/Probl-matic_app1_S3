@@ -14,15 +14,15 @@ public class IngredientTest {
         ingredient.setNom("Poivre");
         ingredient.setDescription("Ca pique!");
         ingredient.setTypeIngredient(TypeIngredient.EPICE);
-        ingredient.setTypeConsistance(TypeConsistance.SOLIDE);
+        ingredient.setTypeConsistance(new Solide());
 
         assertEquals(ingredient.getNom(),"Poivre");
         assertEquals("Ca pique!", ingredient.getDescription());
         assertEquals(ingredient.getTypeIngredient(), TypeIngredient.EPICE);
-        assertEquals(TypeConsistance.SOLIDE, ingredient.getTypeConsistance());
+        assertEquals(new Solide(), ingredient.getTypeConsistance());
 
-        ingredient.setTypeConsistance(TypeConsistance.LIQUIDE);
-        assertEquals(TypeConsistance.LIQUIDE, ingredient.getTypeConsistance());
+        ingredient.setTypeConsistance(new Liquide());
+        assertEquals(new Liquide(), ingredient.getTypeConsistance());
     }
     @Test
     void testEpice() {
