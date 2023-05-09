@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
         import static org.junit.jupiter.api.Assertions.*;
 
-class ChefTest {
+public class ChefTest {
     @Test
     void Test_du_Chef()
     {
