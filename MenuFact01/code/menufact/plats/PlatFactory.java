@@ -27,4 +27,6 @@ public class PlatFactory {
                 return new PlatAuMenu(code, description, prix);
         }
     }
+
+
 }

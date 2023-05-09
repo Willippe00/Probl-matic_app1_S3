@@ -1,11 +1,14 @@
 package menufact.facture;
 
+import menufact.facture.exceptions.FactureException;
+
 public class PAYEEState extends FactureEtat {
     PAYEEState(Facture facture) {
         super(facture);
     }
     @Override
-    public FactureEtat OUVERTE() {
+    public FactureEtat OUVERTE()  {
+
         return new OUVERTEtState(facture);
     }
 
