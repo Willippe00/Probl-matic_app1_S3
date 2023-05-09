@@ -40,8 +40,9 @@ public class Inventaire {
      */
     public void ajusterQuantite(Ingredient ingredient, int quantite) throws IngredientException{
         for(IngredientInventaire inventaire : lesIngredients){
-            if (inventaire.getIngredient().equals(ingredient)){
-                inventaire.setQuantite(inventaire.getQuantite() + quantite);
+            if(inventaire.getIngredient().equals(ingredient)){
+                inventaire.setQuantite(inventaire.getQuantite()+quantite);
+                return;
             }
         }
         throw new IngredientException("L'ingredient ne se trouve pas dans l'inventaire");
