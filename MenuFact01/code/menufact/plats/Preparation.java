@@ -9,13 +9,13 @@ import menufact.plats.exeptions.ServiceException;
 public class Preparation extends Etat_des_plats{
 
     public Preparation(PlatChoisi plat) throws ServiceException {
-        verifierInventaire(plat);
+
     }
 
-    void verifierInventaire(PlatChoisi plat) throws ServiceException
-    {
 
 
-        // a implémenter
+    @Override
+    public boolean verifier(PlatChoisi plat) throws ServiceException{
+        return false;
     }
 }

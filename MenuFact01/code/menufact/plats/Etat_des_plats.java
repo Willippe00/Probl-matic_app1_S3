@@ -1,6 +1,8 @@
 package menufact.plats;
 
-public class Etat_des_plats {
+import menufact.plats.exeptions.ServiceException;
+
+public abstract class Etat_des_plats {
 
     private Etat_des_plats next;
 
@@ -12,6 +14,8 @@ public class Etat_des_plats {
         }
         return first;
     }
+
+    public abstract boolean verifier(PlatChoisi plat) throws ServiceException;
 
 
 }
