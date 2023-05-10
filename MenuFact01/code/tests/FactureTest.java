@@ -23,14 +23,14 @@ public class FactureTest {
     void  TestouverturFacture() throws FactureException {
         Facture facture1 = new Facture("facture de rémie");
         facture1.ouvrir();
-        assert (facture1.getEtat().EstOUVERTE() == true);
+        assert (facture1.getEtat().EstOUVERTE());
     }
 
     @Test
     void  TestFactureFermer() throws FactureException {
         Facture facture1 = new Facture("facture de rémie");
         facture1.fermer();
-        assert (facture1.getEtat().EstOUVERTE() == false);
+        assert (!facture1.getEtat().EstOUVERTE());
     }
 
     @Test

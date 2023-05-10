@@ -11,18 +11,20 @@ public class IngredientTest {
     @Test
     void testIngredient(){
         Ingredient ingredient = new Ingredient();
+        Solide solide = new Solide();
         ingredient.setNom("Poivre");
         ingredient.setDescription("Ca pique!");
         ingredient.setTypeIngredient(TypeIngredient.EPICE);
-        ingredient.setTypeConsistance(new Solide());
+        ingredient.setTypeConsistance(solide);
 
         assertEquals(ingredient.getNom(),"Poivre");
         assertEquals("Ca pique!", ingredient.getDescription());
         assertEquals(ingredient.getTypeIngredient(), TypeIngredient.EPICE);
-        assertEquals(new Solide(), ingredient.getTypeConsistance());
+        assertEquals(solide, ingredient.getTypeConsistance());
 
-        ingredient.setTypeConsistance(new Liquide());
-        assertEquals(new Liquide(), ingredient.getTypeConsistance());
+        Liquide liquide = new Liquide();
+        ingredient.setTypeConsistance(liquide);
+        assertEquals(liquide, ingredient.getTypeConsistance());
     }
     @Test
     void testEpice() {
